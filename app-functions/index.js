@@ -6,6 +6,7 @@ const {
 const { moveXaxis } = require("./moveXaxis");
 const { newCoordinates } = require("./newCoordinates");
 const { overlapCheck } = require("./overlapCheck");
+const { moveOverlapPart } = require('./moveOverlapPart');
 
 module.exports = {
   pickFontSize,
@@ -14,4 +15,5 @@ module.exports = {
   moveXaxis,
   newCoordinates,
   overlapCheck,
+  moveOverlapPart,
 };
