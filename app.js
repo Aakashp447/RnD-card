@@ -23,23 +23,24 @@ const convert = async () => {
     coordinates.push({ name: "email", axis: pickXandY("#email", $) });
     coordinates.push({ name: "title", axis: pickXandY("#company", $) });
     // const finalForXaxis = pickElementsHavingSameYaxis(coordinates);
-    // console.log("heres ==> ", coordinates);
+    console.log("heres ==> ", coordinates);
     let ok = [];
     for (let cardUser of cardUsers) {
       cardUser = await newCoordinates(coordinates, cardUser);
       ok.push(cardUser);
     }
+    console.log('ok ======> ' , ok)
     const temp = Object.keys(cardUsers[0]);
     let rec1,
       rec2,
       final = [];
     for (const user of cardUsers) {
-      // console.log("<<<========== user changed ==========>>>");
+      console.log("<<<========== user changed ==========>>>");
       let ok = [];
       for (let i = 0; i < temp.length; i++) {
         // console.log('temp[i] =>', temp[i]);
         for (let j = i + 1; j < temp.length; j++) {
-          // console.log(temp[i], "==", temp[j]);
+          console.log(temp[i], "==", temp[j]);
           rec1 = {
             x: parseInt(user[temp[i]].x1.split("px")[0]),
             y: parseInt(user[temp[i]].y1.split("px")[0]),
@@ -57,7 +58,7 @@ const convert = async () => {
             height: 10,
           };
           const overlap = intersection(rec1, rec2);
-          // console.log(overlap !== null ? overlap : "no");
+          console.log(overlap !== null ? overlap : "no");
           if (overlap) {
             ok.push({
               attr1: temp[i],
